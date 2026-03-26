@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0.94 0.04 165;
+    --foreground: 0.22 0.05 193;
+    --card: 1 0 0;
+    --card-foreground: 0.22 0.05 193;
+    --popover: 1 0 0;
+    --popover-foreground: 0.22 0.05 193;
+    --primary: 0.44 0.09 193;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.96 0.03 165;
+    --secondary-foreground: 0.44 0.09 193;
+    --muted: 0.96 0.03 165;
+    --muted-foreground: 0.55 0.05 180;
+    --accent: 0.96 0.03 165;
+    --accent-foreground: 0.44 0.09 193;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.04 165;
+    --input: 0.92 0.03 165;
+    --ring: 0.44 0.09 193;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.96 0.03 165;
+    --sidebar-foreground: 0.22 0.05 193;
+    --sidebar-primary: 0.44 0.09 193;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.91 0.04 165;
+    --sidebar-accent-foreground: 0.22 0.05 193;
+    --sidebar-border: 0.88 0.04 165;
+    --sidebar-ring: 0.44 0.09 193;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    color: #000000;
+  }
+  50% {
+    color: #cc0000;
+  }
+}
+.blink {
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(-20px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.logo-reveal {
+  animation: logoReveal 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-slide-up {
+  animation: fadeSlideUp 0.6s ease-out forwards;
+}
+.fade-slide-up-delay-1 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+.fade-slide-up-delay-2 {
+  animation-delay: 0.55s;
+  opacity: 0;
+}
